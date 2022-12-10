@@ -24,7 +24,9 @@ console.log("Using a callback...");
 fs.readFile(file_to_open, file_callback);
 
 // file stats
+console.log("---------------");
 fs.stat(file_to_open, stats_callback);
 
 // unlink file
+console.log("---------------");
 fs.unlink(file_to_open, unlink_callback);
