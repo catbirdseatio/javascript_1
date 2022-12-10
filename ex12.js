@@ -6,8 +6,9 @@ const print_lines = (err, data) => {
     console.log(data.toString());
 }
 
-const yell_at_me = (what) => {
-    return what.toUpperCase();
+const yell_at_me = (err, data) => {
+    let text = data.toString();
+    console.log("THIS IS YELLING...", text.toUpperCase());
 }
 
 const pad_yell = (what) => {
@@ -17,7 +18,8 @@ const pad_yell = (what) => {
 
 const cb_pad_yell = (err, data) => {
     let text = data.toString();
-    console.log("ThIs is PaD YeLl", pad_yell(text));
+    console.log("ThIs is PaD YeLl");
+    print_lines(err, pad_yell(text));
 }
 
 fs.readFile("poem.txt", print_lines);
@@ -25,10 +27,5 @@ fs.readFile("poem.txt", print_lines);
 // let's do that again but with an anonymous function
 // you've actually seen this before
 
-fs.readFile("poem.txt", (err, data) => {
-    let text = data.toString();
-    let yelling = yell_at_me(text);
-    print_lines(err, yelling);
-})
-
+fs.readFile("poem.txt", yell_at_me)
 fs.readFile("poem.txt", cb_pad_yell);
