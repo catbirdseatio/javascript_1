@@ -1,0 +1,14 @@
+{
+  "name": "javascript_basics",
+  "version": "1.0.0",
+  "description": "Zed's javascript course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ljsthw-bandolier": "git+https://git.learnjsthehardway.com/learn-javascript-the-hard-way/ljsthw-bandolier.git"
+  }
+}
