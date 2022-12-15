@@ -11,6 +11,7 @@ class Game {
 
   die(message) {
     this.say(message);
+    this.say("GAME OVER");
     process.exit(1);
   }
 
@@ -21,7 +22,7 @@ class Game {
     if (this.hp <= 0) {
       this.die("You spin around and fall flat!");
     } else {
-      return readline.question(prompt + "");
+      return readline.question(`${prompt} `);
     }
   }
 
@@ -79,7 +80,6 @@ class Door extends Room {
             this.game.hp -= 2;
         }
       }
-      
       
     } else {
       this.game.say("You can't do that. You go back to the start.");
